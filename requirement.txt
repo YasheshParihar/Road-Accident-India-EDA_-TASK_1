@@ -1,4 +1,4 @@
-import streamlit
-import pandas
-import scikit-learn
-import pickle
+streamlit
+pandas
+scikit-learn
+pickle
