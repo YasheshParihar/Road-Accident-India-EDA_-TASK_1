@@ -5,7 +5,7 @@ import zipfile
 import pickle
 import os
 import gdown
-import joblib
+
 
 # URL of the file on Google Drive
 file_url = 'https://drive.google.com/file/d/1qHveJ_xH3lrz3H5J1vzYV5rFQxzTVbNb'
