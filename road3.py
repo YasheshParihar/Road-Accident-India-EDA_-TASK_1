@@ -6,33 +6,24 @@ import pickle
 import zipfile
 import os
 
-# Function to unzip a file
-def unzip_file(zip_path, extract_to):
-    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-        zip_ref.extractall(extract_to)
 
-# Example usage
-zip_path = 'y_pred_prob_knn.zip'  # Replace with your zip file path
-extract_to = ' '  # Replace with the directory where you want to extract the contents
+import gdown
+import joblib
 
-unzip_file(zip_path, extract_to)
+# URL of the file on Google Drive
+file_url = 'https://drive.google.com/file/d/1qHveJ_xH3lrz3H5J1vzYV5rFQxzTVbNb/view?usp=drive_link'
 
-# Now let's read the contents of the extracted files
-# For demonstration, let's assume the extracted files are text files
-extracted_files = os.listdir(extract_to)
+# Download the file
+gdown.download(file_url, 'y_pred_prob_knn.pkl', quiet=False)
 
-for file_name in extracted_files:
-    file_path = os.path.join(extract_to, file_name)
-    if os.path.isfile(file_path):
-        with open(file_path, 'r') as file:
-            print(f'Contents of {file_name}:')
-            print(file.read())
+# Load the model
+model = joblib.load('y_pred_prob_knn.pkl')
 
 
 # Load the model (make sure you have a model file named 'accident_model.pkl')
 # model = joblib.load('y_pred_prob_knn.pkl')
-with open('y_pred_prob_knn.pkl', 'rb') as f:
-    dataset = pickle.load(f)
+# with open('y_pred_prob_knn.pkl', 'rb') as f:
+#     dataset = pickle.load(f)
 
 # Streamlit app
 st.title('Accident Severity Prediction')
