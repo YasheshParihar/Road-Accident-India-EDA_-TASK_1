@@ -13,7 +13,7 @@ def unzip_file(zip_path, extract_to):
 
 # Example usage
 zip_path = 'y_pred_prob_knn.zip'  # Replace with your zip file path
-extract_to = 'C:\Users\Ishu\Desktop\Internship\road_accident\y_pred_prob_knn.pkl'  # Replace with the directory where you want to extract the contents
+extract_to = ' '  # Replace with the directory where you want to extract the contents
 
 unzip_file(zip_path, extract_to)
 
