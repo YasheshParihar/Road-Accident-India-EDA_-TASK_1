@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import zipfile
+import pickle
 import os
 import gdown
 import joblib
@@ -13,13 +14,13 @@ file_url = 'https://drive.google.com/file/d/1qHveJ_xH3lrz3H5J1vzYV5rFQxzTVbNb'
 gdown.download(file_url, 'y_pred_prob_knn.pkl', quiet=False)
 
 # Load the model
-model = joblib.load('y_pred_prob_knn.pkl')
+# model = joblib.load('y_pred_prob_knn.pkl')
 
 
 # Load the model (make sure you have a model file named 'accident_model.pkl')
 # model = joblib.load('y_pred_prob_knn.pkl')
-# with open('y_pred_prob_knn.pkl', 'rb') as f:
-#     dataset = pickle.load(f)
+with open('y_pred_prob_knn.pkl', 'rb') as f:
+    dataset = pickle.load(f)
 
 # Streamlit app
 st.title('Accident Severity Prediction')
