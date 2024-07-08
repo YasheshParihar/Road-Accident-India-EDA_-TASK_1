@@ -1,21 +1,21 @@
 
 import streamlit as st
 import pandas as pd
-import zipfile
+# import zipfile
 import joblib
-import pickle
-import os
-import gdown
+# import pickle
+# import os
+# import gdown
 
 
 # URL of the file on Google Drive
-file_url = 'https://drive.google.com/file/d/1qHveJ_xH3lrz3H5J1vzYV5rFQxzTVbNb'
+# file_url = 'https://drive.google.com/file/d/1qHveJ_xH3lrz3H5J1vzYV5rFQxzTVbNb'
 
 # Download the file
-gdown.download(file_url, 'y_pred_prob_knn.pkl', quiet=False)
+# gdown.download(file_url, 'y_pred_prob_knn.pkl', quiet=False)
 
 # Load the model
-model = joblib.load('y_pred_prob_knn.pkl')
+model = joblib.load('y_pred_lr.pkl')
 
 
 # Load the model (make sure you have a model file named 'accident_model.pkl')
