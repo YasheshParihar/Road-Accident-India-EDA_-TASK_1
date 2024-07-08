@@ -1,8 +1,10 @@
+import subprocess
 
-import pip 
-def install(package):
-    pip.main(['install', package])
-install('joblib')
+# Define the pip command
+pip_command = [sys.executable, '-m', 'pip', 'install', 'joblib']
+
+# Run pip install joblib command
+subprocess.check_call(pip_command)
 
 import streamlit as st
 import pandas as pd
