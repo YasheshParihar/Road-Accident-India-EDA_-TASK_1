@@ -1,7 +1,8 @@
 
 import streamlit as st
 import pandas as pd
-import joblib
+# import joblib
+import pickle
 import zipfile
 import os
 
@@ -29,7 +30,9 @@ for file_name in extracted_files:
 
 
 # Load the model (make sure you have a model file named 'accident_model.pkl')
-model = joblib.load('y_pred_prob_knn.pkl')
+# model = joblib.load('y_pred_prob_knn.pkl')
+with open('y_pred_prob_knn.pkl', 'rb') as f:
+    dataset = pickle.load(f)
 
 # Streamlit app
 st.title('Accident Severity Prediction')
