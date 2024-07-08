@@ -11,7 +11,7 @@ import gdown
 import joblib
 
 # URL of the file on Google Drive
-file_url = 'https://drive.google.com/uc?id=1qHveJ_xH3lrz3H5J1vzYV5rFQxzTVbNb&authuser=3'
+file_url = 'https://drive.google.com/file/d/11AwzS9-ENZg22ObIrfDhlgGltVqhOeZJ'
 
 # Download the file
 gdown.download(file_url, 'y_pred_prob_knn.pkl', quiet=False)
